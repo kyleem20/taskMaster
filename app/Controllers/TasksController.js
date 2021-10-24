@@ -14,32 +14,32 @@ export class TasksController {
       listId: taskId,
       completed: false
     }
-    countCheckboxes()
+    // countCheckboxes()
     console.log('creating task', taskData)
     tasksService.createTask(taskData)
   }
 
 
-  toggleCheck(taskId) {
-    tasksService.toggleCheck(taskId)
-    saveState()
-  }
+  // toggleCheck(taskId) {
+  //   tasksService.toggleCheck(taskId)
+  //   saveState()
+  // }
 
-  countCheckboxes() {
-    let countInput = document.getElementById('count');
-    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    for (let i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].onchange = countCheckboxes;
-    }
+  // countCheckboxes() {
+  //   let countInput = document.getElementById('count');
+  //   let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  //   for (let i = 0; i < checkboxes.length; i++) {
+  //     checkboxes[i].onchange = countCheckboxes;
+  //   }
 
 
-    let count = 0;
-    for (let i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked)
-        count++;
-    }
-    countInput.value = count;
-  }
+  //   let count = 0;
+  //   for (let i = 0; i < checkboxes.length; i++) {
+  //     if (checkboxes[i].checked)
+  //       count++;
+  //   }
+  //   countInput.value = count;
+  // }
 
   completeTasks() {
     tasksService.completeTasks

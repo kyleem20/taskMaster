@@ -36,7 +36,15 @@ export class ListsController {
     formElem.reset()
     // bootstrap.Modal.getInstance(document.getElementById('form-modal')).toggle()
   }
+  // checkedTask() {
+  //   let test = localStorage.input === 'true' ? true : false;
+  //   $('input').prop('checked', test || false);
+  // }
 
+  // ('input').on('change', checkedTask() {
+  //   localStorage.input = $(this).is(':checked');
+  //   console.log($(this).is(':checked'));
+  // });
 
   deleteList(id) {
     if (window.confirm('Are you sure you want delete this list?')) {
