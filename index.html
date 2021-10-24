@@ -14,67 +14,82 @@
   <title>taskMaster</title>
 </head>
 
-<body>
+<body class="">
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+    <nav class="navbar navbar-dark navbar-expand bg-secondary  no-select">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ms-2">Task Master</span>
+        <span class="ms-2 text-dark">Task Master</span>
       </a>
     </nav>
   </header>
+
+
   <main>
     <div class="container-fluid">
-      <div class="row">
+      <div class="row" id="">
         <div class="col-11 m-3">
-          <div class="card w-75 bg-primary p-3">Add List:
-            <input type="text" class="list" name="listName" id="newListName" aria-describedby="helpId"
-              placeholder="add list">
-            <button class="btn btn-success" onclick="app.listsController.createList(`${this.listName}`)"> Add List
-            </button>
-          </div>
-        </div>
-        <div class="col">
-          <div class="row" id="newList">
-            <!--  -->
-            <div class="col-12">
-              <div class="row p-2">
-                <div class="col-md-3 bg-light shadow rounded  m-3">
-                  <div class="row">
-                    <div class="rounded-top bg-secondary col-12 p-2">
-                      <div class="row">
-                        <div class="col-9">
-                          <p id="newList"><b>Text</b></p>
-                        </div>
-                        <button class="btn btn-dark col-2"
-                          onclick="app.tasksController.deleteList(`'${this.id}'`)">X</button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ${this.getTasks()} -->
-                  <div class=" row">
-                    <div class="col-12 m-3 p-2  ">
-                      <b>Add Task</b>
-                      <div class="">
-                        added task
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <form class="row align-items-end p-2" onsubmit="app.tasksController.createTask(`'${this.id}'`)"> -->
-                  <div class="col-9">
-                    <input type="text" class="form-control" name="listName" id="listName" aria-describedby="helpId"
-                      placeholder="add task">
-                  </div>
-                  <button class="btn btn-dark col-3">+</button>
-                  </form>
-                </div>
-              </div>
+          <div>
+            <div class="card w-75 bg-primary p-3">
+              <form onsubmit="app.listsController.createList()">
+                Add List: <input type="text" class="list" name="listName" id="newListName" aria-describedby="helpId"
+                  placeholder="new list title" minlength="3" maxlength="15" required>
+
+                <label for="color" class="form-label">Header Color:
+                  <input type="color" class="color-swatch form-control m-2" value="#ffffff" name="color" id="color"
+                    aria-describedby="color" required></label>
+                <button type="submit" class="btn btn-success"> Create
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
+
+
+      <div class="row p-2" id="newList">
+        <!-- <div class="col-md-3 bg-light shadow rounded  m-3">
+          <div class="row d-flex justify-content-space-between rounded-top bg-secondary  p-2">
+            <div class="col-md-9 ">
+              <h3><b>Text</b></h3>
+
+            </div>
+            <div class="col p-0">
+              <button class="btn btn-dark" onclick="app.listsController.deleteList('${this.id}')">X</button>
+            </div>
+            <div class="col-12 text-light text-center">out of</div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-12 m-1 p-2">
+              <b>Add Task</b>
+              <div class="row">
+                <div class="col-2 d-flex align-items-center p-2 form-check">
+                  <input class="form-check-input m-0" type="checkbox" value="taskComplete" id="taskComplete">
+                </div>
+                <label class="col-6 form-check-label" for="taskComplete">
+
+                  added task
+                </label>
+                <button class="col-2 btn btn-dark text-center m-0"
+                  onclick="app.tasksController.deleteTask('${this.id}')">X</button>
+              </div>
+            </div>
+          </div>
+          <form class="row align-items-end p-2" onsubmit="app.tasksController.createTask(`'${this.id}'`)">
+            <div class="col-9">
+              <input type="text" class="form-control" name="listName" id="listName" aria-describedby="helpId"
+                placeholder="add task">
+            </div>
+            <button class="btn btn-dark col-3">+</button>
+          </form>
+        </div> -->
+      </div>
     </div>
+
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">

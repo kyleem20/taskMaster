@@ -3,17 +3,14 @@ import { isValidProp } from "./Utils/isValidProp.js"
 import { List } from "./Models/List.js"
 
 
-const testList = new List({
-  listName: "groceries",
-}
-)
 
-console.log(testList);
+console.log('app state is loaded');
 class AppState extends EventEmitter {
   /** @type {import('./Models/List').List[]} */
-  lists = [
-    new List({ listName: 'Groceries' })
-  ]
+  lists = []
+
+  tasks = []
+
 }
 
 export const ProxyState = new Proxy(new AppState(), {

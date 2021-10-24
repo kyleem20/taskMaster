@@ -21,4 +21,4 @@ class ListsService {
 
 }
 
-export const listsService = new ListsService
+export const listsService = new ListsService()
