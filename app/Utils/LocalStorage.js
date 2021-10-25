@@ -13,7 +13,8 @@ import { Task } from "../Models/Task.js";
 export function saveState() {
   localStorage.setItem('ListApp', JSON.stringify({
     lists: ProxyState.lists,
-    tasks: ProxyState.tasks
+    tasks: ProxyState.tasks,
+    complete: ProxyState.complete
   }))
 }
 
@@ -23,5 +24,6 @@ export function loadState() {
   if (data != null) {
     ProxyState.lists = data.lists.map(p => new List(p))
     ProxyState.tasks = data.tasks.map(t => new Task(t))
+    ProxyState.complete = data.complete.map(c => new Complete(c))
   }
 }

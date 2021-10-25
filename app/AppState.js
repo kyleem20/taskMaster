@@ -11,6 +11,8 @@ class AppState extends EventEmitter {
 
   tasks = []
 
+  complete = []
+
 }
 
 export const ProxyState = new Proxy(new AppState(), {

@@ -15,7 +15,7 @@ export class Task {
   get Template() {
     return `
             <div class="col-12 d-flex align-items-center p-2 form-check">
-                <input onclick="app.tasksController.toggleCheck('${this.id}')" class="form-check-input m-0" type="checkbox" value="taskComplete" name="${this.id}" id="${this.id}" ${this.completeTasks ? 'completed' : ''}>
+                <input onclick="app.tasksController.completeTasks('${this.id}')" class="form-check-input m-0" type="checkbox" value="taskComplete" name="${this.id}" id="${this.id}" ${this.complete ? 'checked' : ''}>
                 
               <label class ="col-6 form-check-label ps-3" for="taskComplete">
                 

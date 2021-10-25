@@ -22,7 +22,7 @@ export class List {
         <div class="col p-0">
           <button class="btn btn-dark" onclick="app.listsController.deleteList('${this.id}')">X</button>
         </div>
-        <div class="col-12 text-light text-center">${this.complete ? this.complete : this.completeTasks()}</div>
+        <div class="col-12 text-light text-center">${this.completeTasks()}</div>
       </div>
 
 
@@ -67,8 +67,9 @@ export class List {
   completeTasks() {
     const tasks = ProxyState.tasks.filter(t => this.id == t.listId)
     let totalTasks = tasks.length
-    let found = tasks.filter(task => task.checked == true)
+    let found = tasks.filter(task => task.complete)
     let totalComplete = found.length
+    console.log(totalComplete)
     return `${totalTasks} tasks / ${totalComplete} complete`
   }
 

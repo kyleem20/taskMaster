@@ -20,10 +20,10 @@ export class TasksController {
   }
 
 
-  // toggleCheck(taskId) {
-  //   tasksService.toggleCheck(taskId)
-  //   saveState()
-  // }
+  toggleCheck(taskId) {
+    tasksService.toggleCheck(taskId)
+    saveState()
+  }
 
   // countCheckboxes() {
   //   let countInput = document.getElementById('count');

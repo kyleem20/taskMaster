@@ -17,6 +17,7 @@ export class ListsController {
     console.log('lists controller loaded')
     ProxyState.on('tasks', _drawLists)
     ProxyState.on('tasks', saveState)
+
     _drawLists
     loadState()
   }
